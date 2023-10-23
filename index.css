@@ -1,0 +1,42 @@
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    background-image: url(/depositphotos_7315837-stock-photo-storm-is-coming-on-american.jpg);
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-position: bottom;
+  }
+  
+  .card {
+    /* Add box shadow to the card */
+    box-shadow: 0px 0px 10px gray;
+    height: 80vh !important;
+  }
+  
+  .card-body {
+    /* Add padding to the card body */
+    padding: 20px;
+  }
+  
+  .card-text {
+    /* Add padding to the card text */
+    text-align: center;
+
+  }
+  
+  .btn {
+    /* Add border radius to the button */
+    border-radius: 8px;
+    width: 200px;
+  }
+  .buttons{
+    position: relative;
+    left: 35px !important;
+  }
+  #successModal .modal-dialog {
+    max-width: 35%; /* Adjust this value to increase the width as a percentage */
+    height: 80vh; /* Adjust this value to increase the height as a percentage of the viewport height */
+}
+#modal-content{
+  height:100px !important;
+}
