@@ -1,7 +1,7 @@
 body {
     background-color: white;
     font-family: Arial, sans-serif;
-    background-image: url(/depositphotos_7315837-stock-photo-storm-is-coming-on-american.jpg);
+
     background-repeat: no-repeat;
     background-size:cover ;
     background-position: bottom;
@@ -39,4 +39,8 @@ body {
 }
 #modal-content{
   height:100px !important;
+}
+.alert-warning{
+  z-index: 1;
+  background-color: blue;
 }
