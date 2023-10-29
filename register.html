@@ -19,16 +19,16 @@
 
           <!-- Use a button component for the button -->
           <div class="d-grid mx-5 buttons mt-5 gap-3 col-6 mx-auto">
-            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#successModal" id="redirectButton">
+            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#successModal" id="farmerRedirectButton">
               FARMER
             </button>
-            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#successModal" id="redirectButton">
+            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#successModal" id="distrubutorRedirectButton">
               DISTRUBUTOR
             </button>
-            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#successModal" id="redirectButton">
+            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#successModal" id="retailerRedirectButton">
               RETAILER
             </button>
-            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#successModal" id="redirectButton">
+            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#successModal" id="consumerRedirectButton">
               CONSUMER
             </button>
             
@@ -65,7 +65,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
    <script>
-    document.getElementById('redirectButton').addEventListener('click', function() {
+    // Button that redirects to homepage
+    document.getElementById('farmerRedirectButton').addEventListener('click', function() {
         // Close the modal
         $('#successModal').modal('hide');
 
@@ -75,6 +76,47 @@
             window.location.href = 'homepage.html';
         }, 2000); // Adjust the delay duration (in milliseconds) as needed
     });
+
+    // Button that redirects to distrubutor page
+
+    document.getElementById('distrubutorRedirectButton').addEventListener('click', function() {
+        // Close the modal
+        $('#successModal').modal('hide');
+
+        // Add a delay of 2 seconds (2000 milliseconds) before redirecting
+        setTimeout(function() {
+            // Redirect to the homepage (change 'yourhomepage.html' to your actual homepage URL)
+            window.location.href = 'distrubutor.html';
+        }, 2000); // Adjust the delay duration (in milliseconds) as needed
+    });    
+
+    // Button that redirects to retailer page
+
+    document.getElementById('retailerRedirectButton').addEventListener('click', function() {
+        // Close the modal
+        $('#successModal').modal('hide');
+
+        // Add a delay of 2 seconds (2000 milliseconds) before redirecting
+        setTimeout(function() {
+            // Redirect to the homepage (change 'yourhomepage.html' to your actual homepage URL)
+            window.location.href = 'retailer.html';
+        }, 2000); // Adjust the delay duration (in milliseconds) as needed
+    });    
+
+
+    // Button that redirects to consumer page
+
+    document.getElementById('consumerRedirectButton').addEventListener('click', function() {
+        // Close the modal
+        $('#successModal').modal('hide');
+
+        // Add a delay of 2 seconds (2000 milliseconds) before redirecting
+        setTimeout(function() {
+            // Redirect to the homepage (change 'yourhomepage.html' to your actual homepage URL)
+            window.location.href = 'consumer.html';
+        }, 2000); // Adjust the delay duration (in milliseconds) as needed
+    });    
+
 </script>
 
 

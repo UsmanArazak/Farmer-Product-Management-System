@@ -1,0 +1,154 @@
+<html>
+
+<head>
+  <!-- Include bootstrap via CDN -->
+  <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+</head>
+
+<body class="">
+    <div class="container mt-5">
+        <h2 class="mb-5 ">AVAILABLE PRODUCTS FOR PURCHASE</h2>
+        <!-- the buttton below will be commented because its of no use in the distrubutor page -->
+        <button class="btn btn-danger d-none btn-md w-25 d-block mx-auto mb-3" data-bs-toggle="modal" data-bs-target="#newProductModal">+ UPLOAD A NEW PRODUCT</button>
+        <table class="table table-striped text-center">
+          <thead>
+            <tr >
+              <th>PRODUCT ID</th>
+              <th>PRODUCT NAME</th>
+              <th>STATUS</th>
+              <th>ACTION</th>
+              <th>ADDITIONAL DETAILS</th>
+            </tr>
+          </thead>
+          <tbody id="productTableBody">
+            <!-- Add your table data here -->
+            <tr class="">
+              <td class="bg-danger text-white">1</td>
+              <td class="bg-danger text-white">NEW HARVESTED BEANS</td>
+              <td class="bg-danger text-white">Produced</td>
+              <td class="bg-danger text-white"><a href="#" class="btn btn-outline-light  btn-md">Buy</a></td>
+              <td class="bg-danger text-white"><a href="#" class="btn btn-outline-light btn-md">View Details</a></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>FRESH TOMATOES</td>
+              <td>Harvested</td>
+              <td><a href="#" class="btn btn-outline-danger btn-md">Buy</a></td>
+              <td><a href="#" class="btn btn-outline-danger btn-md">View Details</a></td>
+            </tr>
+            <tr>
+                <td class="bg-danger text-white">3</td>
+                <td class="bg-danger text-white">GROUNDNUTS</td>
+                <td class="bg-danger text-white">Produced</td>
+                <td class="bg-danger text-white"><a href="#" class="btn btn-outline-light  btn-md">Buy</a></td>
+                <td class="bg-danger text-white"><a href="#" class="btn btn-outline-light btn-md">View Details</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>NEWLY SOYA</td>
+                <td>Available</td>
+                <td><a href="#" class="btn btn-outline-danger btn-md  ">Buy</a></td>
+                <td><a href="#" class="btn btn-outline-danger btn-md">View Details</a></td>
+              </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+      
+  
+  <!-- Modal for uploading a new product -->
+<!-- Modal for uploading a new product -->
+<div class="modal fade" id="newProductModal" tabindex="-1" aria-labelledby="newProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newProductModalLabel">Upload a New Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Form for adding a new product -->
+          <form id="newProductForm">
+            <div class="mb-3">
+              <label for="productId" class="form-label">Product ID</label>
+              <input type="text" class="form-control" id="productId" required>
+            </div>
+            <div class="mb-3">
+              <label for="productName" class="form-label">Product Name</label>
+              <input type="text" class="form-control" id="productName" required>
+            </div>
+            <div class="mb-3">
+              <label for="productStatus" class="form-label">Status</label>
+              <select class="form-select" id="productStatus" required>
+                <option value="Active">Produced</option>
+                <option value="Inactive">Harvested</option>
+                <option value="Active">Planted</option>
+                <option value="Inactive">Out of Stock</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="productAction" class="form-label">Action</label>
+              <input type="text" class="form-control" id="productAction" required>
+            </div>
+            <div class="mb-3">
+              <label for="productDetails" class="form-label">Additional Details</label>
+              <input type="text" class="form-control" id="productDetails" required>
+            </div>
+            <button type="submit" class="btn  btn-danger">Add Product</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Updated JavaScript to add products to the table -->
+  <script>
+    document.getElementById('newProductForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const productId = document.getElementById('productId').value; // Update this line
+  const productName = document.getElementById('productName').value; // Update this line
+  const productStatus = document.getElementById('productStatus').value;
+  const productAction = document.getElementById('productAction').value; // Update this line
+  const productDetails = document.getElementById('productDetails').value; // Update this line
+  
+      // Create a new table row with the product details
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${productId}</td>
+        <td>${productName}</td>
+        <td>${productStatus}</td>
+        <td><a href="#" class="btn btn-outline-danger btn-md ">${productAction}</a></td>
+        <td><a href="#" class="btn btn-outline-danger btn-md ">${productDetails}</a></td>
+      `;
+  
+      // Add the new row to the table
+      document.getElementById('productTableBody').appendChild(newRow);
+  
+      // Reset the form
+      document.getElementById('productId').value = '';
+      document.getElementById('productName').value = '';
+      document.getElementById('productStatus').value = 'Active';
+      document.getElementById('productAction').value = '';
+      document.getElementById('productDetails').value = '';
+  
+      // Close the modal
+      $('#newProductModal').modal('hide');
+    });
+  </script>
+  
+  
+  
+  
+  <!-- Include bootstrap and jQuery via CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+</body>
+
+</html>
